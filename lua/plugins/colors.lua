@@ -16,6 +16,17 @@ return {
     },
     opts = {
       theme = 'tokyonight',
+
+      sections = {
+        lualine_b = {
+          {
+            "diagnostics",
+            cond = function()
+              return not vim.b.assistmode
+            end,
+          }
+        }
+      }
     }
   },
 }

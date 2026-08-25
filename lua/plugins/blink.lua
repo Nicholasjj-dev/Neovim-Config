@@ -3,8 +3,12 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
+      enabled = function()
+        return not vim.b.assistmode
+      end,
+
       keymap = {
-        preset = 'default',
+        preset = "default",
 
         ["<Tab>"] = {
           "select_next",
@@ -25,6 +29,7 @@ return {
           "hide",
           "fallback",
         },
+
         ["<C-Space>"] = {
           "show",
           "fallback",
